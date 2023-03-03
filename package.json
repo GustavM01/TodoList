@@ -1,0 +1,21 @@
+{
+  "name": "todolist",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GustavM01/TodoList.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GustavM01/TodoList/issues"
+  },
+  "homepage": "https://github.com/GustavM01/TodoList#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.31.1"
+  }
+}
