@@ -1,14 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo list</title>
-    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="test.css">
     <script src="main.js" defer></script>
 </head>
+
 <body>
-    
+    <h1 id="mainHeader">todos</h1>
+    <section class="container">
+        <header class="header">
+            <input name="checkAll" type="checkbox" id="checkAll">
+            <label for="checkAll"></label>
+            <input type="text" id="new-todo" placeholder="What needs to be done?">
+        </header>
+        <section class="main">
+            <ul id="todoList">
+            </ul>
+        </section>
+        <footer class="footer">
+            <span id="todo-count"></span>
+            <ul class="filters">
+                <li><button id="allBtn" class="selected">All</button></li>
+                <li><button id="activeBtn">Active</button></li>
+                <li><button id="completedBtn">Completed</button></li>
+            </ul>
+            <button class="clear-completed">Clear completed</button>
+        </footer>
+    </section>
 </body>
+
 </html>

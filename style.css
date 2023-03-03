@@ -1,0 +1,159 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    line-height: 1.4em;
+    background: #f5f5f5;
+    color: #4d4d4d;
+    min-width: 230px;
+    max-width: 550px;
+    margin: 0 auto;
+    font-weight: 300;
+}
+
+#mainHeader{
+    position: absolute;
+    font-size: 100px;
+    font-weight: 100;
+    text-align: center;
+    color: rgba(175, 47, 47, 0.15);
+}
+
+.container{
+    background: #fff;
+    margin: 130px 0 40px 0;
+    position: relative;
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%), 0 25px 50px 0 rgb(0 0 0 / 10%);
+    display: block;
+}
+
+.container h1{
+    /* position: absolute; */
+    top: -72px;
+    width: 100%;
+    font-size: 100px;
+    font-weight: 100;
+    text-align: center;
+    color: rgba(175, 47, 47, 0.15);
+}
+
+#new-todo{
+    padding: 16px 16px 16px 60px;
+    border: none;
+    background: rgba(0, 0, 0, 0.003);
+    box-shadow: inset 0 -2px 1px rgb(0 0 0 / 3%);
+    height: inherit;
+    width: 100%;
+    font-size: 24px;
+    position: absolute;
+    z-index: 0;
+}
+
+#new-todo::placeholder{
+    font-style: italic;
+	font-weight: 300;
+	color: #e6e6e6;
+}
+
+#new-todo:focus{
+    outline: none;
+}
+
+.header{
+    display: block;
+    height: 65.59px;
+}
+
+#checkAll{
+    text-align: center;
+	border: none;
+	opacity: 0;
+	position: absolute;
+    
+}
+
+#checkAll + label{
+	width: 34px;
+	height: inherit;
+	font-size: 0;
+	position: absolute;
+    z-index: 1;
+    opacity: 0.5;
+    display: none;
+}
+
+#checkAll + label::before{
+    content: '🔽';
+	font-size: 22px;
+    padding: 23px 15px;
+    position: absolute;
+
+}
+
+.main {
+	position: relative;
+	border-top: 1px solid #e6e6e6;
+    height: fit-content;
+}
+
+#todoList{
+    list-style-type: none;
+    font-size: 24px;
+}
+
+#todoList li{
+    position: relative;
+    font-size: 24px;
+    border-bottom: 1px solid #ededed;
+}
+
+.toggle{
+    /* text-align: center; */
+    width: 24px;
+    height: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: 0 auto;
+    border: none;
+    left: 18px;
+
+}
+
+#todoList li label {
+    word-break: break-all;
+    padding: 15px 15px 15px 60px;
+    display: block;
+    line-height: 1.2;
+    transition: color 0.4s;
+}
+
+#todoList li .remove{
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    bottom: 0;
+    width: 40px;
+    height: 40px;
+    margin: auto 0;
+    font-size: 18px;
+    margin-bottom: 11px;
+    transition: color 0.2s ease-out;
+    border: none;
+    background-color: inherit;
+    opacity: 0.5;
+}
+
+#todoList li .remove:hover{
+    display: block;
+    opacity: 1;
+}
+
+#todoList li label:hover + .remove {
+    display: block;
+}
