@@ -110,6 +110,7 @@ function Counter() {
 window.addEventListener("click", function () {
     Counter();
     LoopCheckboxes();
+    CheckIfChecked();
 
     if(allBtn.classList.contains('selected')){
         ChangeToAll();
@@ -135,6 +136,7 @@ clear.addEventListener('click', function () {
             todoListItems[i].remove();
         }
     }
+    CheckIfChecked();
     hideFooter();
 })
 
@@ -168,9 +170,6 @@ function LoopCheckboxes() {
 
     }
 }
-
-// TEST     |
-//         \|/
 
 allBtn.onclick = function () {
     ChangeToAll();
@@ -233,6 +232,21 @@ function ChangeToCompleted() {
     }
 }
 
+
+function CheckIfChecked(){
+    let todoListItems = document.querySelectorAll('#todoList li');
+
+    for (let i = 0; i < todoListItems.length; i++) {
+        const checkbox = todoListItems[i].querySelector('input[type="checkbox"]');
+        if (checkbox.checked) {
+            clear.classList.remove('hidden');
+        }
+        else{
+            clear.classList.add('hidden')
+        }
+        break;
+    }
+}
 
 
 

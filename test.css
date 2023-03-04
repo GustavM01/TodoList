@@ -175,6 +175,11 @@ body{
     border-radius: 3px;
 }
 
+.filters button:not(.selected):hover{
+    border: 1px solid;
+    border-color: rgba(175, 47, 47, 0.1);
+}
+
 .filters .selected{
     border: 1px solid;
     border-color: rgba(175, 47, 47, 0.2);
@@ -190,12 +195,20 @@ body{
 
 #completedBtn{
 
-}
-
-.clear-completed{
-
 } */
 
+.clear-completed{
+    border: 0;
+    background-color: inherit;
+} 
+
+.clear-completed:hover{
+    text-decoration: underline;
+} 
+
+.clear-completed.hidden{
+    visibility: hidden;
+} 
 
 .hide{
     display: none;
