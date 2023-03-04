@@ -38,7 +38,16 @@ checkAll.addEventListener('change', function () {
         }
     }
     Counter();
-
+    CheckIfChecked();
+    if (allBtn.classList.contains('selected')) {
+        ChangeToAll();
+    }
+    else if (activeBtn.classList.contains('selected')) {
+        ChangeToActive();
+    }
+    else {
+        ChangeToCompleted();
+    }
 
 }
 );
@@ -56,6 +65,7 @@ newTodo.addEventListener("keypress", function (event) {
             titleInput.type = 'checkbox'
 
             const label = document.createElement('label');
+            label.classList.add('todoText')
             label.textContent = newTodo.value;
 
             const button = document.createElement('button');
@@ -70,8 +80,6 @@ newTodo.addEventListener("keypress", function (event) {
 
             todoList.appendChild(li);
             newTodo.value = "";
-
-            // 
 
             titleInput.addEventListener('change', function () {
                 ChangeCheckStyle(titleInput, titleInput.checked)
@@ -104,7 +112,12 @@ function Counter() {
             todoCounter++;
         }
     }
-    todoCount.textContent = todoCounter + ' items left'
+    if(todoCounter === 1){
+        todoCount.textContent = todoCounter + ' item left'
+    }
+    else{
+        todoCount.textContent = todoCounter + ' items left'
+    }
 }
 
 window.addEventListener("click", function () {
@@ -112,13 +125,13 @@ window.addEventListener("click", function () {
     LoopCheckboxes();
     CheckIfChecked();
 
-    if(allBtn.classList.contains('selected')){
+    if (allBtn.classList.contains('selected')) {
         ChangeToAll();
     }
-    else if(activeBtn.classList.contains('selected')){
+    else if (activeBtn.classList.contains('selected')) {
         ChangeToActive();
     }
-    else{
+    else {
         ChangeToCompleted();
     }
 
@@ -233,18 +246,22 @@ function ChangeToCompleted() {
 }
 
 
-function CheckIfChecked(){
+function CheckIfChecked() {
     let todoListItems = document.querySelectorAll('#todoList li');
-
+    let found = false;
     for (let i = 0; i < todoListItems.length; i++) {
         const checkbox = todoListItems[i].querySelector('input[type="checkbox"]');
         if (checkbox.checked) {
-            clear.classList.remove('hidden');
+            found = true;
         }
-        else{
-            clear.classList.add('hidden')
-        }
-        break;
+    }
+
+    if (found) {
+        clear.classList.remove('hidden');
+    }
+    else {
+        clear.classList.add('hidden');
+
     }
 }
 
