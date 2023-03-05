@@ -21,10 +21,10 @@ checkAll.addEventListener('change', function () {
         for (let i = 0; i < todoListItems.length; i++) {
             const checkbox = todoListItems[i].querySelector('input[type="checkbox"]');
             checkbox.checked = true;
-            
+
             ChangeCheckStyle(todoListItems[i], checkAll.checked);
 
-            if(completedBtn.classList.contains('selected')){
+            if (completedBtn.classList.contains('selected')) {
                 todoListItems[i].classList.remove('hide');
             }
         }
@@ -38,7 +38,7 @@ checkAll.addEventListener('change', function () {
 
             ChangeCheckStyle(todoListItems[i], checkAll.checked);
 
-            if(activeBtn.classList.contains('selected')){
+            if (activeBtn.classList.contains('selected')) {
                 todoListItems[i].classList.remove('hide');
             }
         }
@@ -118,10 +118,10 @@ function Counter() {
             todoCounter++;
         }
     }
-    if(todoCounter === 1){
+    if (todoCounter === 1) {
         todoCount.textContent = todoCounter + ' item left'
     }
-    else{
+    else {
         todoCount.textContent = todoCounter + ' items left'
     }
 }
