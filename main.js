@@ -21,9 +21,12 @@ checkAll.addEventListener('change', function () {
         for (let i = 0; i < todoListItems.length; i++) {
             const checkbox = todoListItems[i].querySelector('input[type="checkbox"]');
             checkbox.checked = true;
-            // 
-            ChangeCheckStyle(todoListItems[i], checkAll.checked)
-            // 
+            
+            ChangeCheckStyle(todoListItems[i], checkAll.checked);
+
+            if(completedBtn.classList.contains('selected')){
+                todoListItems[i].classList.remove('hide');
+            }
         }
     }
     else {
@@ -32,9 +35,12 @@ checkAll.addEventListener('change', function () {
         for (let i = 0; i < todoListItems.length; i++) {
             const checkbox = todoListItems[i].querySelector('input[type="checkbox"]');
             checkbox.checked = false;
-            // 
-            ChangeCheckStyle(todoListItems[i], checkAll.checked)
-            // 
+
+            ChangeCheckStyle(todoListItems[i], checkAll.checked);
+
+            if(activeBtn.classList.contains('selected')){
+                todoListItems[i].classList.remove('hide');
+            }
         }
     }
     Counter();
